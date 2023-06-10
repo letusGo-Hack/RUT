@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2026DDF42A34316F00AE89B9 /* Colors.xcassets */; };
 		404218E42A34154400FD96FE /* RUTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E32A34154400FD96FE /* RUTApp.swift */; };
 		404218E62A34154400FD96FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E52A34154400FD96FE /* ContentView.swift */; };
 		404218E82A34154400FD96FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404218E72A34154400FD96FE /* Assets.xcassets */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2026DDF42A34316F00AE89B9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		404218E02A34154400FD96FE /* RUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404218E32A34154400FD96FE /* RUTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTApp.swift; sourceTree = "<group>"; };
 		404218E52A34154400FD96FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -78,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2026DDF32A34316100AE89B9 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				404218E72A34154400FD96FE /* Assets.xcassets */,
+				2026DDF42A34316F00AE89B9 /* Colors.xcassets */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
 		404218D72A34154400FD96FE = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +112,10 @@
 		404218E22A34154400FD96FE /* RUT */ = {
 			isa = PBXGroup;
 			children = (
+				2026DDF32A34316100AE89B9 /* Supports */,
 				5F6944442A341A3D000FA318 /* RUT.entitlements */,
 				404218E32A34154400FD96FE /* RUTApp.swift */,
 				404218E52A34154400FD96FE /* ContentView.swift */,
-				404218E72A34154400FD96FE /* Assets.xcassets */,
 				404218EC2A34154400FD96FE /* Item.swift */,
 				4042190F2A341AF500FD96FE /* Profile.swift */,
 				5F6944452A341BCA000FA318 /* MBTITogether.swift */,
@@ -242,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */,
 				404218EB2A34154400FD96FE /* Preview Assets.xcassets in Resources */,
 				404218E82A34154400FD96FE /* Assets.xcassets in Resources */,
 			);
