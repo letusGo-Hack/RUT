@@ -23,8 +23,3 @@ struct OnboardingMBTISelectItemView: View {
         .clipShape(.rect(cornerRadius: 20))
     }
 }
-
-#Preview {
-//    @State var test: MBTIItemType? = .F
-//    OnboardingMBTISelectItemView(type: .E, isSelectedType: $test)
-}
