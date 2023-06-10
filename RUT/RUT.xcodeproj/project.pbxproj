@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0E22D7F92A343AB6007217A5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7F82A343AB6007217A5 /* MainView.swift */; };
-		0E22D7FB2A343ACF007217A5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7FA2A343ACF007217A5 /* SettingView.swift */; };
 		0E22D7FD2A344275007217A5 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7FC2A344275007217A5 /* ListItemView.swift */; };
 		2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2026DDF42A34316F00AE89B9 /* Colors.xcassets */; };
 		2026DDF82A34347F00AE89B9 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */; };
@@ -50,7 +49,6 @@
 
 /* Begin PBXFileReference section */
 		0E22D7F82A343AB6007217A5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		0E22D7FA2A343ACF007217A5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 		0E22D7FC2A344275007217A5 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		2026DDF42A34316F00AE89B9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E22D7FE2A345499007217A5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				0E22D7F82A343AB6007217A5 /* MainView.swift */,
+				0E22D7FC2A344275007217A5 /* ListItemView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		2026DDF32A34316100AE89B9 /* Supports */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				20FE10222A344EDF006B1B7F /* Model */,
+				0E22D7FE2A345499007217A5 /* Main */,
 				2026DDF62A34331100AE89B9 /* Onboarding */,
 				2026DDF32A34316100AE89B9 /* Supports */,
 				5F6944442A341A3D000FA318 /* RUT.entitlements */,
@@ -173,9 +181,6 @@
 				4042190F2A341AF500FD96FE /* Profile.swift */,
 				5F6944452A341BCA000FA318 /* MBTITogether.swift */,
 				404218E92A34154400FD96FE /* Preview Content */,
-				0E22D7F82A343AB6007217A5 /* MainView.swift */,
-				0E22D7FA2A343ACF007217A5 /* SettingView.swift */,
-				0E22D7FC2A344275007217A5 /* ListItemView.swift */,
 			);
 			path = RUT;
 			sourceTree = "<group>";
@@ -352,7 +357,6 @@
 				20FE101C2A3441AB006B1B7F /* OnboardingMBTISelectView.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 				20FE10262A344EF8006B1B7F /* MBTIType.swift in Sources */,
-				0E22D7FB2A343ACF007217A5 /* SettingView.swift in Sources */,
 				5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */,
 				2026DDFA2A34349300AE89B9 /* OnboardingMBTIView.swift in Sources */,
 				20FE10242A344EE9006B1B7F /* MBTIItemType.swift in Sources */,

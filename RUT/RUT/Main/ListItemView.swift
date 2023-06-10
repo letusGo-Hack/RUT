@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ListItemView: View, Identifiable {
     var id = UUID()
-    
-    let mbti: String
+
+    let mbti: MBTIType
     let nickName: String
     let description: String
     
     var body: some View {
         ZStack(alignment: .leading) {
             RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(.greenLight)
+                .foregroundColor(mbti.backgroundColor)
             VStack(alignment: .leading) {
-                Text(mbti)
+                Text(mbti.rawValue)
                     .foregroundColor(.black)
                     .font(.system(.title, design: .none, weight: .bold))
                 Spacer(minLength: 10)
@@ -39,6 +39,6 @@ struct ListItemView: View, Identifiable {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(mbti: "ENTJ", nickName: "이엔티제잉", description: "야야ㅑ야ㅑ야야야ㅑㅑㅇ")
+        ListItemView(mbti: .ENTJ, nickName: "이엔티제잉", description: "야야ㅑ야ㅑ야야야ㅑㅑㅇ")
     }
 }
