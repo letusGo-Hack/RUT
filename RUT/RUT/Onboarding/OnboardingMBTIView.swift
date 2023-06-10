@@ -45,7 +45,6 @@ struct OnboardingMBTIView: View {
                 Spacer(minLength: 5)
             }
             .background(isComplete ? .blueLight : .grayLight)
-            .padding(.init(top: 0, leading: 20, bottom: 20, trailing: 20))
         }
     }
 }
