@@ -17,3 +17,12 @@ public struct Profile: Codable, Identifiable, Hashable {
         hasher.combine(id)
     }
 }
+
+public extension Profile {
+    static var mock: Self = .init(
+        id: UUID(),
+        nickname: "mock",
+        description: "this is mock",
+        mbti: "ESTJ"
+    )
+}
