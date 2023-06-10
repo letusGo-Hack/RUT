@@ -1,10 +1,8 @@
 # YouT (너 T야?)
 
-letusGo-hack team-3
-
 ## 팀명
 
-원프피
+원프피 (letusGo-hack team-3)
 
 ## 팀원
 
