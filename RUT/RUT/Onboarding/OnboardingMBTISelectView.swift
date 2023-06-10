@@ -32,5 +32,6 @@ struct OnboardingMBTISelectView: View {
                 OnboardingMBTISelectItemView(type: .P, isSelectedType: $forth)
             }
         }
+        .padding(.init(top: 20, leading: 0, bottom: 20, trailing: 0))
     }
 }

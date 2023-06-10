@@ -7,27 +7,23 @@
 
 import SwiftUI
 
-struct ListItemView: View, Identifiable {
-    var id = UUID()
-
-    let mbti: MBTIType
-    let nickName: String
-    let description: String
+struct ListItemView: View {
+    let profile: Profile
     
     var body: some View {
         ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 8)
-                .foregroundColor(mbti.backgroundColor)
+            RoundedRectangle(cornerRadius: 24)
+                .foregroundColor(profile.mbti.backgroundColor)
             VStack(alignment: .leading) {
-                Text(mbti.rawValue)
+                Text(profile.mbti.rawValue)
                     .foregroundColor(.black)
                     .font(.system(.title, design: .none, weight: .bold))
                 Spacer(minLength: 10)
-                Text(nickName)
+                Text(profile.nickname)
                     .foregroundColor(.black)
                     .font(.title3)
                 Spacer(minLength: 10)
-                Text(description)
+                Text(profile.profileDescription)
                     .foregroundColor(.black)
                     .font(.body)
             }
@@ -39,6 +35,6 @@ struct ListItemView: View, Identifiable {
 
 struct ListItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ListItemView(mbti: .ENTJ, nickName: "이엔티제잉", description: "야야ㅑ야ㅑ야야야ㅑㅑㅇ")
+        ListItemView(profile: .mock)
     }
 }

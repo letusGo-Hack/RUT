@@ -9,41 +9,14 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-    
-    @StateObject var shareViewModel = MBTIViewModel()
-    
-    let dummyData = [
-        ListItemView(mbti: .INFP, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ESTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .INTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ENTP, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ISTJ, nickName: "나는야INFP", description: "하하하하하하하하")
-    ]
-
-    // userdefaults에 저장된 전체 사용자 데이터로, 아래 데이터를 생성해야함
-    // check - 더미데이터
-    let dummySurrounding = [
-        CatalogSurroundingView(mbti: .ENTJ, percent: 50),
-        CatalogSurroundingView(mbti: .ESTJ, percent: 25),
-        CatalogSurroundingView(mbti: .INFP, percent: 25)
-    ]
-    
-    
+    @StateObject var sharePlayModel = SharePlayModel()
     
     var body: some View {
         TabView {
-            MainView(values: dummyData)
+            MainView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Main")
-                }
-            
-            CatalogView(values: dummySurrounding)
-                .tabItem {
-                    Image(systemName: "star")
-                    Text("Catalog")
                 }
             
             OnboardingContentView()
@@ -52,50 +25,43 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
-            debugView
+            #if DEBUG
+            DebugView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Debug")
                 }
+            #endif
         }
         .task {
             for await session in MBTITogether.sessions() {
                 print("session: \(session)")
-                shareViewModel.configureGroupSession(session)
+                sharePlayModel.configureGroupSession(session)
             }
         }
     }
+}
+
+struct DebugView: View {
+    @ObservedObject var sharePlayModel: SharePlayModel
     
-    private var debugView: some View {
+    var body: some View {
         VStack {
-            List(Array(shareViewModel.profiles)) { profile in
+            List(Array(sharePlayModel.profiles)) { profile in
                 HStack {
                     Text(profile.nickname)
-                    Text(profile.mbti)
+                    Text(profile.mbti.rawValue)
                 }
             }
             
-            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
-                Button(action: {
-                    shareViewModel.startSharing()
-                }, label: {
-                    Text("startSharing")
-                })
-            }
-        }
-    }
-    
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            if sharePlayModel.sharePlayState == .groupActivityNeeded {
+                Button {
+                    sharePlayModel.startSharing()
+                } label: {
+                    Text("공유하기")
+                }
+            } else {
+                // TODO: facetime을 연결해라
             }
         }
     }
@@ -103,6 +69,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
 

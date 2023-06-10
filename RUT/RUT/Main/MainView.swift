@@ -6,47 +6,53 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainView: View {
-    
-    let values: [ListItemView]
-    
+    @ObservedObject var sharePlayModel: SharePlayModel
+    @Environment(\.modelContext) private var modelContext: ModelContext
+
     var body: some View {
-        NavigationView {
-
-            VStack {
-                
-                // 리스트뷰
-                ScrollView {
-                    LazyVStack() {
-                        ForEach(values) { item in
-                            ListItemView(mbti: item.mbti, nickName: item.nickName, description: item.description)
-                        }
-                    }
-                }
-                
-                
-                
-                // 공유하기 버튼
-                Button(action: {
-                    print("공유하기 버튼 클릭!!")
-                }) {
-                    Text("공유하기")
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.vertical, 16)
-                        .padding(.horizontal, 16)
-                        .background(.blueLight)
-                        .foregroundColor(.black)
-                        .cornerRadius(8)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                }
-
-            }
-            .navigationBarTitle("지갑")
-            
-            
+        NavigationStack {
+            bodyView
+                .navigationBarTitle("지갑")
+        }
+        .onAppear {
+            sharePlayModel.onAppear(modelContext: modelContext)
         }
     }
     
+    private var bodyView: some View {
+        VStack {
+            profileList
+            
+            if sharePlayModel.sharePlayState == .groupActivityNeeded {
+                shareButton
+            }
+        }
+    }
+    
+    private var profileList: some View {
+        ScrollView {
+            LazyVStack {
+                ForEach(sharePlayModel.profiles) { profile in
+                    ListItemView(profile: profile)
+                }
+            }
+        }
+    }
+    
+    private var shareButton: some View {
+        Button { sharePlayModel.startSharing() } label: {
+            Text("공유하기")
+                .frame(minWidth: 0, maxWidth: .infinity)
+                .padding(.vertical, 16)
+                .padding(.horizontal, 16)
+                .background(.blueLight)
+                .foregroundColor(.black)
+                .cornerRadius(24)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+        }
+    }
 }
