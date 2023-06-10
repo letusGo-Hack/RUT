@@ -11,18 +11,9 @@ import SwiftData
 struct ContentView: View {
     @StateObject var sharePlayModel = SharePlayModel()
     
-    let dummyData = [
-        ListItemView(mbti: .INFP, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ESTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .INTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ENTP, nickName: "나는야INFP", description: "하하하하하하하하"),
-        ListItemView(mbti: .ISTJ, nickName: "나는야INFP", description: "하하하하하하하하")
-    ]
-    
-    
     var body: some View {
         TabView {
-            MainView(values: dummyData)
+            MainView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Main")
@@ -34,11 +25,13 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
+            #if DEBUG
             DebugView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Debug")
                 }
+            #endif
         }
         .task {
             for await session in MBTITogether.sessions() {
@@ -57,7 +50,7 @@ struct DebugView: View {
             List(Array(sharePlayModel.profiles)) { profile in
                 HStack {
                     Text(profile.nickname)
-                    Text(profile.mbti)
+                    Text(profile.mbti.rawValue)
                 }
             }
             

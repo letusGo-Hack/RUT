@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum MBTIType: String, CaseIterable {
+enum MBTIType: String, Codable, CaseIterable {
     case ISFJ
     case ISTJ
     case INFP

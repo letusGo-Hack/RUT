@@ -7,22 +7,22 @@
 
 import Foundation
 
-public struct Profile: Codable, Identifiable, Hashable {
-    public let id: UUID
-    public let nickname: String
-    public let description: String
-    public let mbti: String
+struct Profile: Codable, Identifiable, Hashable {
+    let id: UUID
+    let nickname: String
+    let description: String
+    let mbti: MBTIType
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }
 
-public extension Profile {
+extension Profile {
     static var mock: Self = .init(
         id: UUID(),
         nickname: "mock",
         description: "this is mock",
-        mbti: "ESTJ"
+        mbti: .allCases.randomElement()!
     )
 }
