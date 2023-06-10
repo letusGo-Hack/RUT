@@ -25,6 +25,7 @@ final class SharePlayModel: ObservableObject {
     private var modelContext: ModelContext?
     
     @Published var profiles: IdentifiedArrayOf<Profile> = []
+    @AppStorage("MyMBTI") var myMBTI: MBTIType?
     
     var sharePlayState: SharePlayState {
         switch (groupSession, groupStateObserver.isEligibleForGroupSession) {
@@ -90,7 +91,16 @@ final class SharePlayModel: ObservableObject {
         groupSession.$activeParticipants
             .sink { [weak self] activeParticipants in
                 let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
-                self?.send(profile: .mock, to: newParticipants)
+                guard let myMBTI = self?.myMBTI else { return }
+                self?.send(
+                    profile: .init(
+                        id: .init(),
+                        nickname: "mock nickname",
+                        profileDescription: "mock profile",
+                        mbti: myMBTI
+                    ), 
+                    to: newParticipants
+                )
             }
             .store(in: &subscriptions)
         

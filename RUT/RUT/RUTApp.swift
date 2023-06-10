@@ -13,8 +13,20 @@ struct RUTApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
         }
         .modelContainer(for: Profile.self)
+    }
+}
+
+struct RootView: View {
+    @AppStorage("MyMBTI") var myMBTI: MBTIType?
+    
+    var body: some View {
+        if let myMBTI {
+            ContentView()
+        } else {
+            OnboardingProfileContentView()
+        }
     }
 }

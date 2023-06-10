@@ -6,8 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct OnboardingContentView: View {
+    @AppStorage("MyMBTI") var myMBTI: MBTIType?
+    
     @State var mbtiTypeList: [MBTIItemType?] = []
     @State var first: MBTIItemType?
     @State var second: MBTIItemType?
@@ -24,7 +27,7 @@ struct OnboardingContentView: View {
                 }
                 VStack {
                     Text("공유할 MBTI를 설정해주세요!")
-                        .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+                        .lineLimit(2)
                         .foregroundStyle(.grayLight)
                         .font(.system(size: 22, weight: .bold))
                         .padding(.init(top: 60, leading: 0, bottom: 0, trailing: 0))
@@ -62,14 +65,18 @@ struct OnboardingContentView: View {
                     Spacer()
                     
                     // TODO: 완료 버튼 이벤트 달기
-                    Button(action: {
-                        
-                    }, label: {
+                    Button {
+                        let mbtiString = [first, second, third, forth].compactMap(\.?.rawValue).joined()
+                        let mbti: MBTIType = .init(rawValue: mbtiString)!
+                        myMBTI = mbti
+                    } label: {
                         Text("완료")
-                            .font(.system(size: 22, weight: .bold))
+                            .font(.system(size: 22,
+                                          weight: .bold))
                             .foregroundStyle(.black)
-                            .frame(width: 363, height: 70)
-                    })
+                            .frame(width: 363,
+                                   height: 70)
+                    }
                     .background(.blueLight)
                     .clipShape(.rect(cornerRadius: 15))
                     .padding(.init(top: 30, leading: 20, bottom: 20, trailing: 20))
