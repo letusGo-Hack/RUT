@@ -1,14 +1,14 @@
 //
-//  ShareMBTITests.swift
-//  ShareMBTITests
+//  RUTTests.swift
+//  RUTTests
 //
 //  Created by 한상진 on 2023/06/10.
 //
 
 import XCTest
-@testable import ShareMBTI
+@testable import RUT
 
-final class ShareMBTITests: XCTestCase {
+final class RUTTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

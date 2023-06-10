@@ -1,13 +1,13 @@
 //
-//  ShareMBTIUITests.swift
-//  ShareMBTIUITests
+//  RUTUITests.swift
+//  RUTUITests
 //
 //  Created by 한상진 on 2023/06/10.
 //
 
 import XCTest
 
-final class ShareMBTIUITests: XCTestCase {
+final class RUTUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

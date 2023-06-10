@@ -7,63 +7,63 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		404218742A3410B100FD96FE /* ShareMBTIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218732A3410B100FD96FE /* ShareMBTIApp.swift */; };
-		404218762A3410B100FD96FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218752A3410B100FD96FE /* ContentView.swift */; };
-		404218782A3410B200FD96FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404218772A3410B200FD96FE /* Assets.xcassets */; };
-		4042187B2A3410B200FD96FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4042187A2A3410B200FD96FE /* Preview Assets.xcassets */; };
-		4042187D2A3410B200FD96FE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042187C2A3410B200FD96FE /* Item.swift */; };
-		404218872A3410B200FD96FE /* ShareMBTITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218862A3410B200FD96FE /* ShareMBTITests.swift */; };
-		404218912A3410B200FD96FE /* ShareMBTIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218902A3410B200FD96FE /* ShareMBTIUITests.swift */; };
-		404218932A3410B200FD96FE /* ShareMBTIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218922A3410B200FD96FE /* ShareMBTIUITestsLaunchTests.swift */; };
+		404218E42A34154400FD96FE /* RUTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E32A34154400FD96FE /* RUTApp.swift */; };
+		404218E62A34154400FD96FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E52A34154400FD96FE /* ContentView.swift */; };
+		404218E82A34154400FD96FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404218E72A34154400FD96FE /* Assets.xcassets */; };
+		404218EB2A34154400FD96FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 404218EA2A34154400FD96FE /* Preview Assets.xcassets */; };
+		404218ED2A34154400FD96FE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218EC2A34154400FD96FE /* Item.swift */; };
+		404218F72A34154500FD96FE /* RUTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218F62A34154500FD96FE /* RUTTests.swift */; };
+		404219012A34154500FD96FE /* RUTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219002A34154500FD96FE /* RUTUITests.swift */; };
+		404219032A34154500FD96FE /* RUTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		404218832A3410B200FD96FE /* PBXContainerItemProxy */ = {
+		404218F32A34154500FD96FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 404218682A3410B100FD96FE /* Project object */;
+			containerPortal = 404218D82A34154400FD96FE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4042186F2A3410B100FD96FE;
-			remoteInfo = ShareMBTI;
+			remoteGlobalIDString = 404218DF2A34154400FD96FE;
+			remoteInfo = RUT;
 		};
-		4042188D2A3410B200FD96FE /* PBXContainerItemProxy */ = {
+		404218FD2A34154500FD96FE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 404218682A3410B100FD96FE /* Project object */;
+			containerPortal = 404218D82A34154400FD96FE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4042186F2A3410B100FD96FE;
-			remoteInfo = ShareMBTI;
+			remoteGlobalIDString = 404218DF2A34154400FD96FE;
+			remoteInfo = RUT;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		404218702A3410B100FD96FE /* ShareMBTI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShareMBTI.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		404218732A3410B100FD96FE /* ShareMBTIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMBTIApp.swift; sourceTree = "<group>"; };
-		404218752A3410B100FD96FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		404218772A3410B200FD96FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4042187A2A3410B200FD96FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4042187C2A3410B200FD96FE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
-		404218822A3410B200FD96FE /* ShareMBTITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareMBTITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		404218862A3410B200FD96FE /* ShareMBTITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMBTITests.swift; sourceTree = "<group>"; };
-		4042188C2A3410B200FD96FE /* ShareMBTIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShareMBTIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		404218902A3410B200FD96FE /* ShareMBTIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMBTIUITests.swift; sourceTree = "<group>"; };
-		404218922A3410B200FD96FE /* ShareMBTIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMBTIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		404218E02A34154400FD96FE /* RUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		404218E32A34154400FD96FE /* RUTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTApp.swift; sourceTree = "<group>"; };
+		404218E52A34154400FD96FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		404218E72A34154400FD96FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		404218EA2A34154400FD96FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		404218EC2A34154400FD96FE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		404218F22A34154400FD96FE /* RUTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RUTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		404218F62A34154500FD96FE /* RUTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTTests.swift; sourceTree = "<group>"; };
+		404218FC2A34154500FD96FE /* RUTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RUTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		404219002A34154500FD96FE /* RUTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTUITests.swift; sourceTree = "<group>"; };
+		404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4042186D2A3410B100FD96FE /* Frameworks */ = {
+		404218DD2A34154400FD96FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4042187F2A3410B200FD96FE /* Frameworks */ = {
+		404218EF2A34154400FD96FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		404218892A3410B200FD96FE /* Frameworks */ = {
+		404218F92A34154500FD96FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -73,143 +73,143 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		404218672A3410B100FD96FE = {
+		404218D72A34154400FD96FE = {
 			isa = PBXGroup;
 			children = (
-				404218722A3410B100FD96FE /* ShareMBTI */,
-				404218852A3410B200FD96FE /* ShareMBTITests */,
-				4042188F2A3410B200FD96FE /* ShareMBTIUITests */,
-				404218712A3410B100FD96FE /* Products */,
+				404218E22A34154400FD96FE /* RUT */,
+				404218F52A34154500FD96FE /* RUTTests */,
+				404218FF2A34154500FD96FE /* RUTUITests */,
+				404218E12A34154400FD96FE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		404218712A3410B100FD96FE /* Products */ = {
+		404218E12A34154400FD96FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				404218702A3410B100FD96FE /* ShareMBTI.app */,
-				404218822A3410B200FD96FE /* ShareMBTITests.xctest */,
-				4042188C2A3410B200FD96FE /* ShareMBTIUITests.xctest */,
+				404218E02A34154400FD96FE /* RUT.app */,
+				404218F22A34154400FD96FE /* RUTTests.xctest */,
+				404218FC2A34154500FD96FE /* RUTUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		404218722A3410B100FD96FE /* ShareMBTI */ = {
+		404218E22A34154400FD96FE /* RUT */ = {
 			isa = PBXGroup;
 			children = (
-				404218732A3410B100FD96FE /* ShareMBTIApp.swift */,
-				404218752A3410B100FD96FE /* ContentView.swift */,
-				404218772A3410B200FD96FE /* Assets.xcassets */,
-				4042187C2A3410B200FD96FE /* Item.swift */,
-				404218792A3410B200FD96FE /* Preview Content */,
+				404218E32A34154400FD96FE /* RUTApp.swift */,
+				404218E52A34154400FD96FE /* ContentView.swift */,
+				404218E72A34154400FD96FE /* Assets.xcassets */,
+				404218EC2A34154400FD96FE /* Item.swift */,
+				404218E92A34154400FD96FE /* Preview Content */,
 			);
-			path = ShareMBTI;
+			path = RUT;
 			sourceTree = "<group>";
 		};
-		404218792A3410B200FD96FE /* Preview Content */ = {
+		404218E92A34154400FD96FE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				4042187A2A3410B200FD96FE /* Preview Assets.xcassets */,
+				404218EA2A34154400FD96FE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		404218852A3410B200FD96FE /* ShareMBTITests */ = {
+		404218F52A34154500FD96FE /* RUTTests */ = {
 			isa = PBXGroup;
 			children = (
-				404218862A3410B200FD96FE /* ShareMBTITests.swift */,
+				404218F62A34154500FD96FE /* RUTTests.swift */,
 			);
-			path = ShareMBTITests;
+			path = RUTTests;
 			sourceTree = "<group>";
 		};
-		4042188F2A3410B200FD96FE /* ShareMBTIUITests */ = {
+		404218FF2A34154500FD96FE /* RUTUITests */ = {
 			isa = PBXGroup;
 			children = (
-				404218902A3410B200FD96FE /* ShareMBTIUITests.swift */,
-				404218922A3410B200FD96FE /* ShareMBTIUITestsLaunchTests.swift */,
+				404219002A34154500FD96FE /* RUTUITests.swift */,
+				404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */,
 			);
-			path = ShareMBTIUITests;
+			path = RUTUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4042186F2A3410B100FD96FE /* ShareMBTI */ = {
+		404218DF2A34154400FD96FE /* RUT */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 404218962A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTI" */;
+			buildConfigurationList = 404219062A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUT" */;
 			buildPhases = (
-				4042186C2A3410B100FD96FE /* Sources */,
-				4042186D2A3410B100FD96FE /* Frameworks */,
-				4042186E2A3410B100FD96FE /* Resources */,
+				404218DC2A34154400FD96FE /* Sources */,
+				404218DD2A34154400FD96FE /* Frameworks */,
+				404218DE2A34154400FD96FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ShareMBTI;
-			productName = ShareMBTI;
-			productReference = 404218702A3410B100FD96FE /* ShareMBTI.app */;
+			name = RUT;
+			productName = RUT;
+			productReference = 404218E02A34154400FD96FE /* RUT.app */;
 			productType = "com.apple.product-type.application";
 		};
-		404218812A3410B200FD96FE /* ShareMBTITests */ = {
+		404218F12A34154400FD96FE /* RUTTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 404218992A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTITests" */;
+			buildConfigurationList = 404219092A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUTTests" */;
 			buildPhases = (
-				4042187E2A3410B200FD96FE /* Sources */,
-				4042187F2A3410B200FD96FE /* Frameworks */,
-				404218802A3410B200FD96FE /* Resources */,
+				404218EE2A34154400FD96FE /* Sources */,
+				404218EF2A34154400FD96FE /* Frameworks */,
+				404218F02A34154400FD96FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				404218842A3410B200FD96FE /* PBXTargetDependency */,
+				404218F42A34154500FD96FE /* PBXTargetDependency */,
 			);
-			name = ShareMBTITests;
-			productName = ShareMBTITests;
-			productReference = 404218822A3410B200FD96FE /* ShareMBTITests.xctest */;
+			name = RUTTests;
+			productName = RUTTests;
+			productReference = 404218F22A34154400FD96FE /* RUTTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		4042188B2A3410B200FD96FE /* ShareMBTIUITests */ = {
+		404218FB2A34154500FD96FE /* RUTUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4042189C2A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTIUITests" */;
+			buildConfigurationList = 4042190C2A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUTUITests" */;
 			buildPhases = (
-				404218882A3410B200FD96FE /* Sources */,
-				404218892A3410B200FD96FE /* Frameworks */,
-				4042188A2A3410B200FD96FE /* Resources */,
+				404218F82A34154500FD96FE /* Sources */,
+				404218F92A34154500FD96FE /* Frameworks */,
+				404218FA2A34154500FD96FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4042188E2A3410B200FD96FE /* PBXTargetDependency */,
+				404218FE2A34154500FD96FE /* PBXTargetDependency */,
 			);
-			name = ShareMBTIUITests;
-			productName = ShareMBTIUITests;
-			productReference = 4042188C2A3410B200FD96FE /* ShareMBTIUITests.xctest */;
+			name = RUTUITests;
+			productName = RUTUITests;
+			productReference = 404218FC2A34154500FD96FE /* RUTUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		404218682A3410B100FD96FE /* Project object */ = {
+		404218D82A34154400FD96FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					4042186F2A3410B100FD96FE = {
+					404218DF2A34154400FD96FE = {
 						CreatedOnToolsVersion = 15.0;
 					};
-					404218812A3410B200FD96FE = {
+					404218F12A34154400FD96FE = {
 						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 4042186F2A3410B100FD96FE;
+						TestTargetID = 404218DF2A34154400FD96FE;
 					};
-					4042188B2A3410B200FD96FE = {
+					404218FB2A34154500FD96FE = {
 						CreatedOnToolsVersion = 15.0;
-						TestTargetID = 4042186F2A3410B100FD96FE;
+						TestTargetID = 404218DF2A34154400FD96FE;
 					};
 				};
 			};
-			buildConfigurationList = 4042186B2A3410B100FD96FE /* Build configuration list for PBXProject "ShareMBTI" */;
+			buildConfigurationList = 404218DB2A34154400FD96FE /* Build configuration list for PBXProject "RUT" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,36 +217,36 @@
 				en,
 				Base,
 			);
-			mainGroup = 404218672A3410B100FD96FE;
-			productRefGroup = 404218712A3410B100FD96FE /* Products */;
+			mainGroup = 404218D72A34154400FD96FE;
+			productRefGroup = 404218E12A34154400FD96FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4042186F2A3410B100FD96FE /* ShareMBTI */,
-				404218812A3410B200FD96FE /* ShareMBTITests */,
-				4042188B2A3410B200FD96FE /* ShareMBTIUITests */,
+				404218DF2A34154400FD96FE /* RUT */,
+				404218F12A34154400FD96FE /* RUTTests */,
+				404218FB2A34154500FD96FE /* RUTUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4042186E2A3410B100FD96FE /* Resources */ = {
+		404218DE2A34154400FD96FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4042187B2A3410B200FD96FE /* Preview Assets.xcassets in Resources */,
-				404218782A3410B200FD96FE /* Assets.xcassets in Resources */,
+				404218EB2A34154400FD96FE /* Preview Assets.xcassets in Resources */,
+				404218E82A34154400FD96FE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		404218802A3410B200FD96FE /* Resources */ = {
+		404218F02A34154400FD96FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4042188A2A3410B200FD96FE /* Resources */ = {
+		404218FA2A34154500FD96FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -256,50 +256,50 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4042186C2A3410B100FD96FE /* Sources */ = {
+		404218DC2A34154400FD96FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				404218762A3410B100FD96FE /* ContentView.swift in Sources */,
-				4042187D2A3410B200FD96FE /* Item.swift in Sources */,
-				404218742A3410B100FD96FE /* ShareMBTIApp.swift in Sources */,
+				404218E62A34154400FD96FE /* ContentView.swift in Sources */,
+				404218ED2A34154400FD96FE /* Item.swift in Sources */,
+				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4042187E2A3410B200FD96FE /* Sources */ = {
+		404218EE2A34154400FD96FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				404218872A3410B200FD96FE /* ShareMBTITests.swift in Sources */,
+				404218F72A34154500FD96FE /* RUTTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		404218882A3410B200FD96FE /* Sources */ = {
+		404218F82A34154500FD96FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				404218932A3410B200FD96FE /* ShareMBTIUITestsLaunchTests.swift in Sources */,
-				404218912A3410B200FD96FE /* ShareMBTIUITests.swift in Sources */,
+				404219032A34154500FD96FE /* RUTUITestsLaunchTests.swift in Sources */,
+				404219012A34154500FD96FE /* RUTUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		404218842A3410B200FD96FE /* PBXTargetDependency */ = {
+		404218F42A34154500FD96FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4042186F2A3410B100FD96FE /* ShareMBTI */;
-			targetProxy = 404218832A3410B200FD96FE /* PBXContainerItemProxy */;
+			target = 404218DF2A34154400FD96FE /* RUT */;
+			targetProxy = 404218F32A34154500FD96FE /* PBXContainerItemProxy */;
 		};
-		4042188E2A3410B200FD96FE /* PBXTargetDependency */ = {
+		404218FE2A34154500FD96FE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 4042186F2A3410B100FD96FE /* ShareMBTI */;
-			targetProxy = 4042188D2A3410B200FD96FE /* PBXContainerItemProxy */;
+			target = 404218DF2A34154400FD96FE /* RUT */;
+			targetProxy = 404218FD2A34154500FD96FE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		404218942A3410B200FD96FE /* Debug */ = {
+		404219042A34154500FD96FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -362,7 +362,7 @@
 			};
 			name = Debug;
 		};
-		404218952A3410B200FD96FE /* Release */ = {
+		404219052A34154500FD96FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -418,14 +418,14 @@
 			};
 			name = Release;
 		};
-		404218972A3410B200FD96FE /* Debug */ = {
+		404219072A34154500FD96FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ShareMBTI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
 				DEVELOPMENT_TEAM = 85329TR25G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -439,7 +439,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -447,14 +447,14 @@
 			};
 			name = Debug;
 		};
-		404218982A3410B200FD96FE /* Release */ = {
+		404219082A34154500FD96FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"ShareMBTI/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
 				DEVELOPMENT_TEAM = 85329TR25G;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -468,7 +468,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTI;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -476,7 +476,7 @@
 			};
 			name = Release;
 		};
-		4042189A2A3410B200FD96FE /* Debug */ = {
+		4042190A2A34154500FD96FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -487,16 +487,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareMBTI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShareMBTI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RUT";
 			};
 			name = Debug;
 		};
-		4042189B2A3410B200FD96FE /* Release */ = {
+		4042190B2A34154500FD96FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -507,16 +507,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUTTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShareMBTI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ShareMBTI";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RUT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/RUT";
 			};
 			name = Release;
 		};
-		4042189D2A3410B200FD96FE /* Debug */ = {
+		4042190D2A34154500FD96FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -525,16 +525,16 @@
 				DEVELOPMENT_TEAM = 85329TR25G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTIUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShareMBTI;
+				TEST_TARGET_NAME = RUT;
 			};
 			name = Debug;
 		};
-		4042189E2A3410B200FD96FE /* Release */ = {
+		4042190E2A34154500FD96FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -543,55 +543,55 @@
 				DEVELOPMENT_TEAM = 85329TR25G;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.ShareMBTIUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUTUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = ShareMBTI;
+				TEST_TARGET_NAME = RUT;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4042186B2A3410B100FD96FE /* Build configuration list for PBXProject "ShareMBTI" */ = {
+		404218DB2A34154400FD96FE /* Build configuration list for PBXProject "RUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				404218942A3410B200FD96FE /* Debug */,
-				404218952A3410B200FD96FE /* Release */,
+				404219042A34154500FD96FE /* Debug */,
+				404219052A34154500FD96FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		404218962A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTI" */ = {
+		404219062A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				404218972A3410B200FD96FE /* Debug */,
-				404218982A3410B200FD96FE /* Release */,
+				404219072A34154500FD96FE /* Debug */,
+				404219082A34154500FD96FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		404218992A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTITests" */ = {
+		404219092A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUTTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4042189A2A3410B200FD96FE /* Debug */,
-				4042189B2A3410B200FD96FE /* Release */,
+				4042190A2A34154500FD96FE /* Debug */,
+				4042190B2A34154500FD96FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4042189C2A3410B200FD96FE /* Build configuration list for PBXNativeTarget "ShareMBTIUITests" */ = {
+		4042190C2A34154500FD96FE /* Build configuration list for PBXNativeTarget "RUTUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4042189D2A3410B200FD96FE /* Debug */,
-				4042189E2A3410B200FD96FE /* Release */,
+				4042190D2A34154500FD96FE /* Debug */,
+				4042190E2A34154500FD96FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 404218682A3410B100FD96FE /* Project object */;
+	rootObject = 404218D82A34154400FD96FE /* Project object */;
 }

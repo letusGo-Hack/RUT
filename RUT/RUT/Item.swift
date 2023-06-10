@@ -1,6 +1,6 @@
 //
 //  Item.swift
-//  ShareMBTI
+//  RUT
 //
 //  Created by 한상진 on 2023/06/10.
 //

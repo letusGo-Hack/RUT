@@ -1,13 +1,13 @@
 //
-//  ShareMBTIUITestsLaunchTests.swift
-//  ShareMBTIUITests
+//  RUTUITestsLaunchTests.swift
+//  RUTUITests
 //
 //  Created by 한상진 on 2023/06/10.
 //
 
 import XCTest
 
-final class ShareMBTIUITestsLaunchTests: XCTestCase {
+final class RUTUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
