@@ -6,14 +6,19 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct MainView: View {
     @ObservedObject var sharePlayModel: SharePlayModel
-    
+    @Environment(\.modelContext) private var modelContext: ModelContext
+
     var body: some View {
         NavigationStack {
             bodyView
                 .navigationBarTitle("지갑")
+        }
+        .onAppear {
+            sharePlayModel.onAppear(modelContext: modelContext)
         }
     }
     
