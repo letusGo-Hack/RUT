@@ -20,3 +20,7 @@
 ### 프로젝트 소개
 
 - SharePlay를 이용해 손 쉽게 친구의 MBTI를 알아보고 기억해보아요 :)
+
+### 화면 구성
+
+<img width="772" alt="image" src="https://github.com/letusGo-Hack/RUT/assets/25509153/cdef3872-84f9-4be4-9655-d28d894e4c8b">
