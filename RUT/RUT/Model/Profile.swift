@@ -5,24 +5,46 @@
 //  Created by 한상진 on 2023/06/10.
 //
 
+import SwiftData
 import Foundation
 
-public struct Profile: Codable, Identifiable, Hashable {
-    public let id: UUID
-    public let nickname: String
-    public let description: String
-    public let mbti: String
+@Model
+final class Profile: Identifiable, Hashable, Codable {
+    let id: UUID
+    let nickname: String
+    let description: String
+    let mbti: MBTIType
     
-    public func hash(into hasher: inout Hasher) {
+    init(
+        id: UUID,
+        nickname: String,
+        description: String,
+        mbti: MBTIType
+    ) {
+        self.id = id
+        self.nickname = nickname
+        self.description = description
+        self.mbti = mbti
+    }
+    
+    init(from decoder: Decoder) throws {
+        
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+    }
+
+    func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 }
 
-public extension Profile {
-    static var mock: Self = .init(
+extension Profile {
+    static var mock: Profile = .init(
         id: UUID(),
         nickname: "mock",
         description: "this is mock",
-        mbti: "ESTJ"
+        mbti: .allCases.randomElement()!
     )
 }

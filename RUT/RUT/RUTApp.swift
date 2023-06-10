@@ -15,5 +15,6 @@ struct RUTApp: App {
         WindowGroup {
             ContentView()
         }
+        .modelContainer(for: Profile.self)
     }
 }
