@@ -14,9 +14,18 @@ struct ContentView: View {
     
     var shareViewModel = MBTIViewModel()
     
+    let dummyData = [
+            ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하"),
+            ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하"),
+            ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하"),
+            ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하"),
+            ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하")
+        ]
+    
+    
     var body: some View {
         TabView {
-            MainView()
+            MainView(values: dummyData)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Main")

@@ -21,17 +21,19 @@ struct ListItemView: View, Identifiable {
             VStack(alignment: .leading) {
                 Text(mbti)
                     .foregroundColor(.black)
-                    .font(.title)
+                    .font(.system(.title, design: .none, weight: .bold))
+                Spacer(minLength: 10)
                 Text(nickName)
                     .foregroundColor(.black)
-                    .font(.title2)
+                    .font(.title3)
+                Spacer(minLength: 10)
                 Text(description)
                     .foregroundColor(.black)
-                    .font(.title2)
+                    .font(.body)
             }
             .padding(16)
         }
-        .padding(16)
+        .padding(.horizontal, 16)
     }
 }
 
