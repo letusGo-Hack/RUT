@@ -9,8 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    
     @StateObject var sharePlayModel = SharePlayModel()
     
     let dummyData = [
@@ -36,7 +34,7 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
-            debugView
+            DebugView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Debug")
@@ -49,8 +47,12 @@ struct ContentView: View {
             }
         }
     }
+}
+
+struct DebugView: View {
+    @ObservedObject var sharePlayModel: SharePlayModel
     
-    private var debugView: some View {
+    var body: some View {
         VStack {
             List(Array(sharePlayModel.profiles)) { profile in
                 HStack {
