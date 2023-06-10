@@ -16,6 +16,17 @@ struct MainView: View {
 
             VStack {
                 
+                // 리스트뷰
+                ScrollView {
+                    LazyVStack() {
+                        ForEach(values) { item in
+                            ListItemView(mbti: item.mbti, nickName: item.nickName, description: item.description)
+                        }
+                    }
+                }
+                
+                
+                
                 // 공유하기 버튼
                 Button(action: {
                     print("공유하기 버튼 클릭!!")
@@ -29,15 +40,6 @@ struct MainView: View {
                         .cornerRadius(8)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                }
-                
-                // 리스트뷰
-                ScrollView {
-                    LazyVStack() {
-                        ForEach(values) { item in
-                            ListItemView(mbti: item.mbti, nickName: item.nickName, description: item.description)
-                        }
-                    }
                 }
 
             }
