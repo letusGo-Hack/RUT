@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
-    var shareViewModel = MBTIViewModel()
+    @StateObject var shareViewModel = MBTIViewModel()
     
     let dummyData = [
         ListItemView(mbti: .INFP, nickName: "나는야INFP", description: "하하하하하하하하"),
@@ -37,15 +37,15 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
-            debugView
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Debug")
-                }
+            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
+                debugView
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Debug")
+                    }
+            }
         }
         .task {
-            print("configureGroupSession loop")
-            
             for await session in MBTITogether.sessions() {
                 print("session: \(session)")
                 shareViewModel.configureGroupSession(session)

@@ -24,9 +24,8 @@ struct MBTITogether: GroupActivity {
 }
 
 @MainActor
-@Observable
-class MBTIViewModel {
-    var profiles: [Profile] = [
+class MBTIViewModel: ObservableObject {
+    @Published var profiles: [Profile] = [
         Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "mock")
     ]
     var groupSession: GroupSession<MBTITogether>? = nil
@@ -36,17 +35,7 @@ class MBTIViewModel {
     private var subscriptions: Set<AnyCancellable> = []
     private var tasks = Set<Task<Void, Never>>()
     
-    private let profile = Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "MBTI")
-    
-    private let groupStateObserver = GroupStateObserver()
-    
-    init() {
-        groupStateObserver.$isEligibleForGroupSession
-            .sink { isEligibleForGroupSession in
-                print("isEligibleForGroupSession: \(isEligibleForGroupSession)")
-            }
-            .store(in: &subscriptions)
-    }
+    let groupStateObserver = GroupStateObserver()
     
     func startSharing() {
         Task {
@@ -80,13 +69,14 @@ class MBTIViewModel {
         self.groupSession = groupSession
         let messenger = GroupSessionMessenger(session: groupSession)
         self.messenger = messenger
-        let journal = GroupSessionJournal(session: groupSession)
-        self.journal = journal
+//        let journal = GroupSessionJournal(session: groupSession)
+//        self.journal = journal
         
         groupSession.$state
             .sink { state in
                 if case .invalidated = state {
                     self.groupSession = nil
+                    print("session invalidated")
                     self.reset()
                 }
             }
@@ -95,12 +85,22 @@ class MBTIViewModel {
         // 보내기
         groupSession.$activeParticipants
             .sink { activeParticipants in
-//                let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
+                let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
 
                 Task {
                     do {
-                        print("activeParticipants")
-                        try await messenger.send(self.profile, to: .all)
+                        print(
+                            "activeParticipants"
+                        )
+                        try await messenger.send(
+                            Profile(
+                                id: UUID(),
+                                nickname: "my nickname",
+                                description: "description",
+                                mbti: "MBTI"
+                            ),
+                            to: .only(newParticipants)
+                        )
                     } catch {
                         print("activeParticipants error: \(error)")
                     }
@@ -109,15 +109,15 @@ class MBTIViewModel {
             .store(in: &subscriptions)
         
         // 받기
-        tasks.insert(
-            Task {
-                print("receive")
-                for await (message, _) in messenger.messages(of: Profile.self) {
-                    print("receive message: \(message)")
-                    handle(message)
-                }
+        let receiveTask = Task {
+            print("receive")
+            for await (message, _) in messenger.messages(of: Profile.self) {
+                print("receive message: \(message)")
+                handle(message)
             }
-        )
+        }
+        
+        tasks.insert(receiveTask)
         
 //        tasks.insert(
 //            Task {
