@@ -16,8 +16,9 @@ struct OnboardingProfileContentView: View {
     @State var nickName: String = ""
     @State var profile: String = ""
     
+    // 1. 스크롤뷰
     var body: some View {
-        GeometryReader { geometry in
+        ScrollView {
             HStack {
                 Image(.icCancel)
                     .frame(width: 52, height: 52, alignment: .topLeading)
@@ -25,23 +26,24 @@ struct OnboardingProfileContentView: View {
             }
             VStack {
                 Text("닉네임 (이름)")
-                    .lineLimit(2)
                     .foregroundStyle(.grayLight)
                     .font(.system(size: 22, weight: .bold))
                     .padding(.init(top: 60, leading: 0, bottom: 30, trailing: 0))
                 
                 TextField("닉네임을 입력해주세요.", text: $nickName)
-                    .textFieldStyle(.roundedBorder)
+                    .lineLimit(1)
                     .background(.clear)
-                    .foregroundStyle(.black)
-                    .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 20)
                 
                 VStack {
                     Text("")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 2)
+                        .padding(.horizontal, 20)
                 }
-                .frame(maxWidth: geometry.size.width - 80, minHeight: 2, maxHeight: 2)
-                .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                 .background(.grayLight)
+                .padding(.horizontal, 20)
                 
                 Text("나에 대한 한마디")
                     .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
@@ -49,25 +51,37 @@ struct OnboardingProfileContentView: View {
                     .font(.system(size: 22, weight: .bold))
                     .padding(.init(top: 60, leading: 0, bottom: 20, trailing: 0))
                 
-                TextEditor(text: $profile)
-                    .padding()
-                    .foregroundStyle(.black)
-                    .font(.system(size: 18))
-                    .lineSpacing(3)
-                    .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: 200)
-                    .border(.blackDark, width: 1.5)
+                TextField("나는 소심하지만 용감하다!", text: $nickName)
+                    .lineLimit(1)
+                    .background(.clear)
+                    .foregroundStyle(.white)
+                    .padding(.horizontal, 20)
                 
+                VStack {
+                    Text("")
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 2)
+                        .padding(.horizontal, 20)
+                }
+                .background(.grayLight)
+                .padding(.horizontal, 20)
+                
+                Spacer(minLength: 250)
+                
+                // TODO: 완료 버튼 이벤트 달기
                 Button(action: {
                     
                 }, label: {
                     Text("완료")
                         .font(.system(size: 22, weight: .bold))
                         .foregroundStyle(.black)
-                        .frame(width: 363, height: 70)
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 70)
+                        .padding(.horizontal, 20)
                 })
                 .background(.blueLight)
                 .clipShape(.rect(cornerRadius: 15))
-                .padding(.init(top: 30, leading: 20, bottom: 20, trailing: 20))
+                .scenePadding()
             }
         }
         .background(.blackDark)

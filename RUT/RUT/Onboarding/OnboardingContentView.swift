@@ -15,7 +15,7 @@ struct OnboardingContentView: View {
     @State var forth: MBTIItemType?
     
     var body: some View {
-        GeometryReader { geometry in
+        ScrollView {
             VStack {
                 HStack {
                     Image(.icCancel)
@@ -27,7 +27,7 @@ struct OnboardingContentView: View {
                         .lineLimit(/*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
                         .foregroundStyle(.grayLight)
                         .font(.system(size: 22, weight: .bold))
-                        .padding(.init(top: 60, leading: 0, bottom: 60, trailing: 0))
+                        .padding(.init(top: 60, leading: 0, bottom: 0, trailing: 0))
                     
                     OnboardingMBTIView(
                         first: $first,
@@ -35,13 +35,16 @@ struct OnboardingContentView: View {
                         third: $third,
                         forth: $forth
                     )
+                    .padding(.init(top: 60, leading: 20, bottom: 20, trailing: 20))
                     
                     VStack {
                         Text("")
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 2)
+                            .padding(.horizontal, 20)
                     }
-                    .frame(maxWidth: geometry.size.width - 80, minHeight: 2, maxHeight: 2)
-                    .padding(.init(top: 0, leading: 20, bottom: 0, trailing: 20))
                     .background(.grayLight)
+                    .padding(.horizontal, 20)
                     
                     OnboardingMBTISelectView(
                         first: $first,
@@ -49,7 +52,9 @@ struct OnboardingContentView: View {
                         third: $third,
                         forth: $forth
                     )
+                    .padding(.horizontal, 20)
                     
+                    // TODO: MBTI 버튼 이벤트 달기
                     Button("내 MBTI를 모르겠어요.", action: {
                         
                     })
@@ -57,6 +62,9 @@ struct OnboardingContentView: View {
                     .font(.system(size: 20, weight: .bold))
                     .padding(.init(top: 40, leading: 20, bottom: 40, trailing: 20))
                     
+                    Spacer()
+                    
+                    // TODO: 완료 버튼 이벤트 달기
                     Button(action: {
                         
                     }, label: {
@@ -75,6 +83,6 @@ struct OnboardingContentView: View {
     }
 }
 
-//#Preview {
-//    OnboardingContentView(mbtiTypeList: [])
-//}
+#Preview {
+    OnboardingContentView(mbtiTypeList: [])
+}
