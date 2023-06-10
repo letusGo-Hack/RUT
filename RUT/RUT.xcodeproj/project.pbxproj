@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E22D8012A346102007217A5 /* CatalogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D8002A346102007217A5 /* CatalogView.swift */; };
+		0E22D8032A3461D6007217A5 /* CatalogItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D8022A3461D6007217A5 /* CatalogItemView.swift */; };
+		0E22D8052A346D65007217A5 /* CatalogSurroundingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D8042A346D65007217A5 /* CatalogSurroundingView.swift */; };
 		2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2026DDF42A34316F00AE89B9 /* Colors.xcassets */; };
 		2026DDF82A34347F00AE89B9 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */; };
 		2026DDFA2A34349300AE89B9 /* OnboardingMBTIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026DDF92A34349300AE89B9 /* OnboardingMBTIView.swift */; };
@@ -49,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E22D8002A346102007217A5 /* CatalogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogView.swift; sourceTree = "<group>"; };
+		0E22D8022A3461D6007217A5 /* CatalogItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogItemView.swift; sourceTree = "<group>"; };
+		0E22D8042A346D65007217A5 /* CatalogSurroundingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSurroundingView.swift; sourceTree = "<group>"; };
 		2026DDF42A34316F00AE89B9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
 		2026DDF92A34349300AE89B9 /* OnboardingMBTIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMBTIView.swift; sourceTree = "<group>"; };
@@ -105,10 +111,20 @@
 		0E22D7FE2A345499007217A5 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				203B39302A34603D0097A9D7 /* ListItemView.swift */,
 				203B39312A34603D0097A9D7 /* MainView.swift */,
+				203B39302A34603D0097A9D7 /* ListItemView.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		0E22D7FF2A346083007217A5 /* Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				0E22D8002A346102007217A5 /* CatalogView.swift */,
+				0E22D8022A3461D6007217A5 /* CatalogItemView.swift */,
+				0E22D8042A346D65007217A5 /* CatalogSurroundingView.swift */,
+			);
+			path = Catalog;
 			sourceTree = "<group>";
 		};
 		2026DDF32A34316100AE89B9 /* Supports */ = {
@@ -182,6 +198,7 @@
 			children = (
 				20FE10222A344EDF006B1B7F /* Model */,
 				0E22D7FE2A345499007217A5 /* Main */,
+				0E22D7FF2A346083007217A5 /* Catalog */,
 				2026DDF62A34331100AE89B9 /* Onboarding */,
 				5F6944442A341A3D000FA318 /* RUT.entitlements */,
 				404218E32A34154400FD96FE /* RUTApp.swift */,
@@ -360,6 +377,7 @@
 			files = (
 				404218E62A34154400FD96FE /* ContentView.swift in Sources */,
 				203B39322A34603D0097A9D7 /* ListItemView.swift in Sources */,
+				0E22D8012A346102007217A5 /* CatalogView.swift in Sources */,
 				203B392E2A345D400097A9D7 /* Array+.swift in Sources */,
 				20FE10212A34433A006B1B7F /* OnboardingMBTISelectItem.swift in Sources */,
 				20FE101E2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift in Sources */,
@@ -368,11 +386,13 @@
 				20FE101C2A3441AB006B1B7F /* OnboardingMBTISelectView.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 				20FE10262A344EF8006B1B7F /* MBTIType.swift in Sources */,
+				0E22D8032A3461D6007217A5 /* CatalogItemView.swift in Sources */,
 				5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */,
 				2026DDFA2A34349300AE89B9 /* OnboardingMBTIView.swift in Sources */,
 				20FE10242A344EE9006B1B7F /* MBTIItemType.swift in Sources */,
 				203B39332A34603D0097A9D7 /* MainView.swift in Sources */,
 				2026DDF82A34347F00AE89B9 /* OnboardingContentView.swift in Sources */,
+				0E22D8052A346D65007217A5 /* CatalogSurroundingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
