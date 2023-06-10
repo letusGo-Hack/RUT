@@ -21,6 +21,15 @@ struct ContentView: View {
         ListItemView(mbti: .ENTP, nickName: "나는야INFP", description: "하하하하하하하하"),
         ListItemView(mbti: .ISTJ, nickName: "나는야INFP", description: "하하하하하하하하")
     ]
+
+    // userdefaults에 저장된 전체 사용자 데이터로, 아래 데이터를 생성해야함
+    // check - 더미데이터
+    let dummySurrounding = [
+        CatalogSurroundingView(mbti: .ENTJ, percent: 50),
+        CatalogSurroundingView(mbti: .ESTJ, percent: 25),
+        CatalogSurroundingView(mbti: .INFP, percent: 25)
+    ]
+    
     
     
     var body: some View {
@@ -29,6 +38,12 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "house")
                     Text("Main")
+                }
+            
+            CatalogView(values: dummySurrounding)
+                .tabItem {
+                    Image(systemName: "star")
+                    Text("Catalog")
                 }
             
             OnboardingContentView()
