@@ -68,7 +68,6 @@ struct OnboardingContentView: View {
                     .background(.blueLight)
                     .clipShape(.rect(cornerRadius: 15))
                     .padding(.init(top: 30, leading: 20, bottom: 20, trailing: 20))
-                    
                 }
             }
             .background(.blackDark)
@@ -76,6 +75,6 @@ struct OnboardingContentView: View {
     }
 }
 
-#Preview {
-    OnboardingContentView(mbtiTypeList: [])
-}
+//#Preview {
+//    OnboardingContentView(mbtiTypeList: [])
+//}
