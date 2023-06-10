@@ -29,9 +29,30 @@ struct ContentView: View {
                 }
             
         }
-
     }
-
+    
+    private var debugView: some View {
+        VStack {
+            List(Array(shareViewModel.profiles)) { profile in
+                HStack {
+                    Text(profile.nickname)
+                    Text(profile.mbti)
+                }
+            }
+            
+            Button(action: {
+                shareViewModel.startSharing()
+            }, label: {
+                Text("startSharing")
+            })
+        }
+        .task {
+            for await session in MBTITogether.sessions() {
+                shareViewModel.configureGroupSession(session)
+            }
+        }
+    }
+    
     private func addItem() {
         withAnimation {
             let newItem = Item(timestamp: Date())

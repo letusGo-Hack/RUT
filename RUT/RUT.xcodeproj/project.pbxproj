@@ -21,6 +21,7 @@
 		404219032A34154500FD96FE /* RUTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */; };
 		404219102A341AF500FD96FE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042190F2A341AF500FD96FE /* Profile.swift */; };
 		5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6944452A341BCA000FA318 /* MBTITogether.swift */; };
+		5F6944492A343C0D000FA318 /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6944482A343C0D000FA318 /* IdentifiedCollections */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F6944492A343C0D000FA318 /* IdentifiedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +176,9 @@
 			dependencies = (
 			);
 			name = RUT;
+			packageProductDependencies = (
+				5F6944482A343C0D000FA318 /* IdentifiedCollections */,
+			);
 			productName = RUT;
 			productReference = 404218E02A34154400FD96FE /* RUT.app */;
 			productType = "com.apple.product-type.application";
@@ -246,6 +251,9 @@
 				Base,
 			);
 			mainGroup = 404218D72A34154400FD96FE;
+			packageReferences = (
+				5F6944472A343C0D000FA318 /* XCRemoteSwiftPackageReference "swift-identified-collections" */,
+			);
 			productRefGroup = 404218E12A34154400FD96FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -462,6 +470,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
 				DEVELOPMENT_TEAM = U8U4L6FXAF;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -474,7 +483,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letus.RUT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -491,7 +500,9 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
+
 				DEVELOPMENT_TEAM = U8U4L6FXAF;
+
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -504,7 +515,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.havi.RUT;
+				PRODUCT_BUNDLE_IDENTIFIER = com.letus.RUT;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -628,6 +639,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5F6944472A343C0D000FA318 /* XCRemoteSwiftPackageReference "swift-identified-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-identified-collections";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.7.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5F6944482A343C0D000FA318 /* IdentifiedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5F6944472A343C0D000FA318 /* XCRemoteSwiftPackageReference "swift-identified-collections" */;
+			productName = IdentifiedCollections;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 404218D82A34154400FD96FE /* Project object */;
 }

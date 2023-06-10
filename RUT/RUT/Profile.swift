@@ -7,9 +7,13 @@
 
 import Foundation
 
-public struct Profile: Codable, Identifiable {
+public struct Profile: Codable, Identifiable, Hashable {
     public let id: UUID
     public let nickname: String
     public let description: String
     public let mbti: String
+    
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 }
