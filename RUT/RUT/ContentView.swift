@@ -28,6 +28,19 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
+            debugView
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Debug")
+                }
+        }
+        .task {
+            print("configureGroupSession loop")
+            
+            for await session in MBTITogether.sessions() {
+                print("session: \(session)")
+                shareViewModel.configureGroupSession(session)
+            }
         }
     }
     
@@ -45,11 +58,6 @@ struct ContentView: View {
             }, label: {
                 Text("startSharing")
             })
-        }
-        .task {
-            for await session in MBTITogether.sessions() {
-                shareViewModel.configureGroupSession(session)
-            }
         }
     }
     

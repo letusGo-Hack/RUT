@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import GroupActivities
 import Observation
+import IdentifiedCollections
 
 struct MBTITogether: GroupActivity {
     
@@ -22,9 +23,10 @@ struct MBTITogether: GroupActivity {
     }
 }
 
+@MainActor
 @Observable
 class MBTIViewModel {
-    var profiles: Set<Profile> = [
+    var profiles: [Profile] = [
         Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "mock")
     ]
     var groupSession: GroupSession<MBTITogether>? = nil
@@ -36,17 +38,45 @@ class MBTIViewModel {
     
     private let profile = Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "MBTI")
     
+    private let groupStateObserver = GroupStateObserver()
+    
+    init() {
+        groupStateObserver.$isEligibleForGroupSession
+            .sink { isEligibleForGroupSession in
+                print("isEligibleForGroupSession: \(isEligibleForGroupSession)")
+            }
+            .store(in: &subscriptions)
+    }
+    
     func startSharing() {
         Task {
-            do {
-                _ = try await MBTITogether().activate()
-            } catch {
-                print("start error \(error)")
+            let activity = MBTITogether()
+            
+            switch await activity.prepareForActivation() {
+            case .activationDisabled:
+                print(#function, "activationDisabled")
+                break
+            case .activationPreferred:
+                print(#function, "activationPreferred")
+                do {
+                    print(#function, #line)
+                    _ = try await activity.activate()
+                    print(#function, #line)
+                } catch {
+                    print(#function, "error \(error)")
+                }
+            case .cancelled:
+                print(#function, "cancelled")
+                break
+            default:
+                print(#function, "default")
             }
         }
     }
     
     func configureGroupSession(_ groupSession: GroupSession<MBTITogether>) {
+        print(#function)
+
         self.groupSession = groupSession
         let messenger = GroupSessionMessenger(session: groupSession)
         self.messenger = messenger
@@ -68,7 +98,12 @@ class MBTIViewModel {
 //                let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
 
                 Task {
-                    try? await messenger.send(self.profile, to: .all)
+                    do {
+                        print("activeParticipants")
+                        try await messenger.send(self.profile, to: .all)
+                    } catch {
+                        print("activeParticipants error: \(error)")
+                    }
                 }
             }
             .store(in: &subscriptions)
@@ -76,7 +111,9 @@ class MBTIViewModel {
         // 받기
         tasks.insert(
             Task {
+                print("receive")
                 for await (message, _) in messenger.messages(of: Profile.self) {
+                    print("receive message: \(message)")
                     handle(message)
                 }
             }
@@ -94,10 +131,12 @@ class MBTIViewModel {
     }
     
     func handle(_ profile: Profile) {
-        profiles.insert(profile)
+        print("handle: \(profile)")
+        profiles.append(profile)
     }
     
     private func reset() {
+        print(#function)
         profiles = []
         
         messenger = nil
