@@ -12,22 +12,42 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
-    var shareViewModel = MBTIViewModel()
+    @StateObject var shareViewModel = MBTIViewModel()
+    
+    let dummyData = [
+        ListItemView(mbti: .INFP, nickName: "나는야INFP", description: "하하하하하하하하"),
+        ListItemView(mbti: .ESTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
+        ListItemView(mbti: .INTJ, nickName: "나는야INFP", description: "하하하하하하하하"),
+        ListItemView(mbti: .ENTP, nickName: "나는야INFP", description: "하하하하하하하하"),
+        ListItemView(mbti: .ISTJ, nickName: "나는야INFP", description: "하하하하하하하하")
+    ]
+    
     
     var body: some View {
         TabView {
-            MainView()
+            MainView(values: dummyData)
                 .tabItem {
                     Image(systemName: "house")
                     Text("Main")
                 }
             
-            SettingView()
+            OnboardingContentView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Setting")
                 }
             
+            debugView
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Debug")
+                }
+        }
+        .task {
+            for await session in MBTITogether.sessions() {
+                print("session: \(session)")
+                shareViewModel.configureGroupSession(session)
+            }
         }
     }
     
@@ -40,15 +60,12 @@ struct ContentView: View {
                 }
             }
             
-            Button(action: {
-                shareViewModel.startSharing()
-            }, label: {
-                Text("startSharing")
-            })
-        }
-        .task {
-            for await session in MBTITogether.sessions() {
-                shareViewModel.configureGroupSession(session)
+            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
+                Button(action: {
+                    shareViewModel.startSharing()
+                }, label: {
+                    Text("startSharing")
+                })
             }
         }
     }

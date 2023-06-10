@@ -9,6 +9,7 @@ import SwiftUI
 import Combine
 import GroupActivities
 import Observation
+import IdentifiedCollections
 
 struct MBTITogether: GroupActivity {
     
@@ -22,9 +23,9 @@ struct MBTITogether: GroupActivity {
     }
 }
 
-@Observable
-class MBTIViewModel {
-    var profiles: Set<Profile> = [
+@MainActor
+class MBTIViewModel: ObservableObject {
+    @Published var profiles: [Profile] = [
         Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "mock")
     ]
     var groupSession: GroupSession<MBTITogether>? = nil
@@ -34,29 +35,48 @@ class MBTIViewModel {
     private var subscriptions: Set<AnyCancellable> = []
     private var tasks = Set<Task<Void, Never>>()
     
-    private let profile = Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "MBTI")
+    let groupStateObserver = GroupStateObserver()
     
     func startSharing() {
         Task {
-            do {
-                _ = try await MBTITogether().activate()
-            } catch {
-                print("start error \(error)")
+            let activity = MBTITogether()
+            
+            switch await activity.prepareForActivation() {
+            case .activationDisabled:
+                print(#function, "activationDisabled")
+                break
+            case .activationPreferred:
+                print(#function, "activationPreferred")
+                do {
+                    print(#function, #line)
+                    _ = try await activity.activate()
+                    print(#function, #line)
+                } catch {
+                    print(#function, "error \(error)")
+                }
+            case .cancelled:
+                print(#function, "cancelled")
+                break
+            default:
+                print(#function, "default")
             }
         }
     }
     
     func configureGroupSession(_ groupSession: GroupSession<MBTITogether>) {
+        print(#function)
+
         self.groupSession = groupSession
         let messenger = GroupSessionMessenger(session: groupSession)
         self.messenger = messenger
-        let journal = GroupSessionJournal(session: groupSession)
-        self.journal = journal
+//        let journal = GroupSessionJournal(session: groupSession)
+//        self.journal = journal
         
         groupSession.$state
             .sink { state in
                 if case .invalidated = state {
                     self.groupSession = nil
+                    print("session invalidated")
                     self.reset()
                 }
             }
@@ -65,22 +85,39 @@ class MBTIViewModel {
         // 보내기
         groupSession.$activeParticipants
             .sink { activeParticipants in
-//                let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
+                let newParticipants = activeParticipants.subtracting(groupSession.activeParticipants)
 
                 Task {
-                    try? await messenger.send(self.profile, to: .all)
+                    do {
+                        print(
+                            "activeParticipants"
+                        )
+                        try await messenger.send(
+                            Profile(
+                                id: UUID(),
+                                nickname: "my nickname",
+                                description: "description",
+                                mbti: MBTIType.allCases.randomElement()?.rawValue ?? ""
+                            ),
+                            to: .only(newParticipants)
+                        )
+                    } catch {
+                        print("activeParticipants error: \(error)")
+                    }
                 }
             }
             .store(in: &subscriptions)
         
         // 받기
-        tasks.insert(
-            Task {
-                for await (message, _) in messenger.messages(of: Profile.self) {
-                    handle(message)
-                }
+        let receiveTask = Task {
+            print("receive")
+            for await (message, _) in messenger.messages(of: Profile.self) {
+                print("receive message: \(message)")
+                handle(message)
             }
-        )
+        }
+        
+        tasks.insert(receiveTask)
         
 //        tasks.insert(
 //            Task {
@@ -94,10 +131,12 @@ class MBTIViewModel {
     }
     
     func handle(_ profile: Profile) {
-        profiles.insert(profile)
+        print("handle: \(profile)")
+        profiles.append(profile)
     }
     
     private func reset() {
+        print(#function)
         profiles = []
         
         messenger = nil
