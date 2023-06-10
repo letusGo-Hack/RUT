@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CatalogView: View {
+    @ObservedObject var sharePlayModel: SharePlayModel
+    @Environment(\.modelContext) private var modelContext: ModelContext
+    
     
     // check - 더미데이터
     var existenceArray = [
@@ -32,49 +36,57 @@ struct CatalogView: View {
         CatalogItemView(mbti: .ESTP, isSelected: false)
     ]
     
-    let values: [CatalogSurroundingView]
-    
     var body: some View {
         
         NavigationView {
-            
+            bodyView
+            .navigationBarTitle("도감")
+        }
+    }
+    
+    private var bodyView: some View {
+        VStack {
             ScrollView {
                 
                 VStack {
-                    
-                    // 도감 list
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 4), spacing: 16) {
-                        ForEach(existenceArray) { item in
-                            CatalogItemView(mbti: item.mbti, isSelected: item.isSelected)
-                        }
-                    }
-                    .padding(10)
-   
-                    // 내주변 MBTI
-                    LazyVStack() {
-                        
-                        ZStack(alignment: .leading) {
-                            VStack(alignment: .leading) {
-                                
-                                Text("내 주변 MBTI")
-                                    .font(.system(.title, design: .none, weight: .bold))
-                                    .background(.clear)
-                                    .foregroundColor(.grayDark)
-                                    .padding(.vertical, 16)
-                                    .padding(.leading, 16)
-                            }
-                        }
-
-                        ForEach(values) { item in
-                            CatalogSurroundingView(mbti: item.mbti, percent: item.percent)
-                        }
-                    }
-                    
+                    gridView
+                    surroundingView
                 }
             }
-            .navigationBarTitle("도감")
+        }
+    }
+    
+    private var gridView: some View {
+        // 도감 list
+        LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 16), count: 4), spacing: 16) {
+            ForEach(existenceArray) { item in
+                CatalogItemView(mbti: item.mbti, isSelected: item.isSelected)
+            }
+        }
+        .padding(10)
+    }
+    
+    private var surroundingView: some View {
+        
+        LazyVStack() {
             
+            ZStack(alignment: .leading) {
+                VStack(alignment: .leading) {
+                    
+                    Text("내 주변 MBTI")
+                        .font(.system(.title, design: .none, weight: .bold))
+                        .background(.clear)
+                        .foregroundColor(.grayDark)
+                        .padding(.vertical, 16)
+                        .padding(.leading, 16)
+                }
+            }
+
+            ForEach(sharePlayModel.profiles) { profile in
+                CatalogSurroundingView(profile: profile)
+            }
         }
     }
     
 }
+

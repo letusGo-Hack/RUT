@@ -16,13 +16,19 @@ struct ContentView: View {
             MainView(sharePlayModel: sharePlayModel)
                 .tabItem {
                     Image(systemName: "house")
-                    Text("Main")
+                    Text("지갑")
+                }
+            
+            CatalogView(sharePlayModel: sharePlayModel)
+                .tabItem {
+                    Image(systemName: "book")
+                    Text("도감")
                 }
             
             OnboardingContentView()
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Setting")
+                    Text("프로필")
                 }
             
             #if DEBUG

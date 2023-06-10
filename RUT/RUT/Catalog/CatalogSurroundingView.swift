@@ -10,8 +10,7 @@ import SwiftUI
 struct CatalogSurroundingView: View, Identifiable {
     var id = UUID()
 
-    let mbti: MBTIType
-    let percent: Int
+    let profile: Profile
     
     var body: some View {
         ZStack(alignment: .leading) {
@@ -19,14 +18,14 @@ struct CatalogSurroundingView: View, Identifiable {
                 .foregroundColor(.grayLight)
             
             HStack(alignment: .center, spacing: 0) {
-                Text(mbti.rawValue)
+                Text(profile.mbti.rawValue)
                     .foregroundColor(.black)
                     .font(.system(.title3, design: .none, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Spacer()
                 
-                Text("\(percent) %")
+                Text("20 %") // check
                     .foregroundColor(.black)
                     .font(.system(.title3, design: .none, weight: .bold))
                     .frame(maxWidth: .infinity, alignment: .trailing)
@@ -39,3 +38,8 @@ struct CatalogSurroundingView: View, Identifiable {
     }
 }
 
+struct CatalogSurroundingView_Previews: PreviewProvider {
+    static var previews: some View {
+        CatalogSurroundingView(profile: .mock)
+    }
+}
