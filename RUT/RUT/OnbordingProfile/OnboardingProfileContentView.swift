@@ -19,11 +19,6 @@ struct OnboardingProfileContentView: View {
     // 1. 스크롤뷰
     var body: some View {
         ScrollView {
-            HStack {
-                Image(.icCancel)
-                    .frame(width: 52, height: 52, alignment: .topLeading)
-                Spacer()
-            }
             VStack {
                 Text("닉네임 (이름)")
                     .foregroundStyle(.grayLight)
