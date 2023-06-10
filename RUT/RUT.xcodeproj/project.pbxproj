@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0E22D7F92A343AB6007217A5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7F82A343AB6007217A5 /* MainView.swift */; };
 		0E22D7FB2A343ACF007217A5 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7FA2A343ACF007217A5 /* SettingView.swift */; };
+		0E22D7FD2A344275007217A5 /* ListItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E22D7FC2A344275007217A5 /* ListItemView.swift */; };
 		2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2026DDF42A34316F00AE89B9 /* Colors.xcassets */; };
 		404218E42A34154400FD96FE /* RUTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E32A34154400FD96FE /* RUTApp.swift */; };
 		404218E62A34154400FD96FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218E52A34154400FD96FE /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 /* Begin PBXFileReference section */
 		0E22D7F82A343AB6007217A5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		0E22D7FA2A343ACF007217A5 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		0E22D7FC2A344275007217A5 /* ListItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItemView.swift; sourceTree = "<group>"; };
 		2026DDF42A34316F00AE89B9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		404218E02A34154400FD96FE /* RUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		404218E32A34154400FD96FE /* RUTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTApp.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				404218E92A34154400FD96FE /* Preview Content */,
 				0E22D7F82A343AB6007217A5 /* MainView.swift */,
 				0E22D7FA2A343ACF007217A5 /* SettingView.swift */,
+				0E22D7FC2A344275007217A5 /* ListItemView.swift */,
 			);
 			path = RUT;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				404218E62A34154400FD96FE /* ContentView.swift in Sources */,
 				0E22D7F92A343AB6007217A5 /* MainView.swift in Sources */,
 				404219102A341AF500FD96FE /* Profile.swift in Sources */,
+				0E22D7FD2A344275007217A5 /* ListItemView.swift in Sources */,
 				404218ED2A34154400FD96FE /* Item.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 				0E22D7FB2A343ACF007217A5 /* SettingView.swift in Sources */,
@@ -457,7 +461,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
-				DEVELOPMENT_TEAM = 85329TR25G;
+				DEVELOPMENT_TEAM = U8U4L6FXAF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -487,7 +491,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
-				DEVELOPMENT_TEAM = 85329TR25G;
+				DEVELOPMENT_TEAM = U8U4L6FXAF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
