@@ -109,15 +109,24 @@ class MBTIViewModel {
             .store(in: &subscriptions)
         
         // 받기
-        tasks.insert(
-            Task {
-                print("receive")
-                for await (message, _) in messenger.messages(of: Profile.self) {
-                    print("receive message: \(message)")
-                    handle(message)
-                }
+        let receiveTask = Task {
+            print("receive")
+            for await (message, _) in messenger.messages(of: Profile.self) {
+                print("receive message: \(message)")
+                self.profiles.append(
+                    .init(id: .init(), nickname: "111", description: "111", mbti: "111")
+                )
+                self.profiles.append(
+                    .init(id: .init(), nickname: "222", description: "222", mbti: "222")
+                )
+                self.profiles.append(
+                    .init(id: .init(), nickname: "333", description: "333", mbti: "333")
+                )
+                handle(message)
             }
-        )
+        }
+        
+        tasks.insert(receiveTask)
         
 //        tasks.insert(
 //            Task {
