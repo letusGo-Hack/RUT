@@ -15,6 +15,7 @@
 		404218F72A34154500FD96FE /* RUTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404218F62A34154500FD96FE /* RUTTests.swift */; };
 		404219012A34154500FD96FE /* RUTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219002A34154500FD96FE /* RUTUITests.swift */; };
 		404219032A34154500FD96FE /* RUTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */; };
+		404219102A341AF500FD96FE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042190F2A341AF500FD96FE /* Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		404218FC2A34154500FD96FE /* RUTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RUTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		404219002A34154500FD96FE /* RUTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTUITests.swift; sourceTree = "<group>"; };
 		404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4042190F2A341AF500FD96FE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5F6944442A341A3D000FA318 /* RUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RUT.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -103,6 +105,7 @@
 				404218E72A34154400FD96FE /* Assets.xcassets */,
 				404218EC2A34154400FD96FE /* Item.swift */,
 				404218E92A34154400FD96FE /* Preview Content */,
+				4042190F2A341AF500FD96FE /* Profile.swift */,
 			);
 			path = RUT;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404218E62A34154400FD96FE /* ContentView.swift in Sources */,
+				404219102A341AF500FD96FE /* Profile.swift in Sources */,
 				404218ED2A34154400FD96FE /* Item.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 			);
