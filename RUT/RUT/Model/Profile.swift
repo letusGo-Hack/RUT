@@ -14,14 +14,17 @@ final class Profile: Identifiable, Hashable, Codable {
         case id
         case nickname
         case profileDescription
-        case mbti
+        case mbtiRawValue
     }
     
-    @Attribute(.unique)
     let id: UUID
     let nickname: String
     let profileDescription: String
-    let mbti: MBTIType
+    let mbtiRawValue: String
+    
+    var mbti: MBTIType {
+        MBTIType(rawValue: mbtiRawValue) ?? .ISFJ
+    }
     
     init(
         id: UUID,
@@ -32,7 +35,7 @@ final class Profile: Identifiable, Hashable, Codable {
         self.id = id
         self.nickname = nickname
         self.profileDescription = profileDescription
-        self.mbti = mbti
+        self.mbtiRawValue = mbti.rawValue
     }
     
     init(from decoder: Decoder) throws {
@@ -40,7 +43,7 @@ final class Profile: Identifiable, Hashable, Codable {
         id = try container.decode(UUID.self, forKey: .id)
         nickname = try container.decode(String.self, forKey: .nickname)
         profileDescription = try container.decode(String.self, forKey: .profileDescription)
-        mbti = try container.decode(MBTIType.self, forKey: .mbti)
+        mbtiRawValue = try container.decode(String.self, forKey: .mbtiRawValue)
     }
     
     func encode(to encoder: Encoder) throws {
@@ -48,7 +51,7 @@ final class Profile: Identifiable, Hashable, Codable {
         try container.encode(id, forKey: .id)
         try container.encode(nickname, forKey: .nickname)
         try container.encode(profileDescription, forKey: .profileDescription)
-        try container.encode(mbti, forKey: .mbti)
+        try container.encode(mbtiRawValue, forKey: .mbtiRawValue)
     }
 
     func hash(into hasher: inout Hasher) {
@@ -61,6 +64,6 @@ extension Profile {
         id: UUID(),
         nickname: "mock",
         profileDescription: "this is mock",
-        mbti: .allCases.randomElement()!
+        mbti: MBTIType.allCases.randomElement()!
     )
 }

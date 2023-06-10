@@ -16,19 +16,16 @@ struct MainView: View {
         NavigationStack {
             bodyView
                 .navigationBarTitle("지갑")
-        }
-        .onAppear {
-            sharePlayModel.onAppear(modelContext: modelContext)
+                .onFirstAppear {
+                    sharePlayModel.onAppear(modelContext: modelContext)
+                }
         }
     }
     
     private var bodyView: some View {
         VStack {
             profileList
-            
-            if sharePlayModel.sharePlayState == .groupActivityNeeded {
-                shareButton
-            }
+            shareButton
         }
     }
     
