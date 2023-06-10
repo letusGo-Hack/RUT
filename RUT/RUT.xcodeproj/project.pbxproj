@@ -16,6 +16,7 @@
 		404219012A34154500FD96FE /* RUTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219002A34154500FD96FE /* RUTUITests.swift */; };
 		404219032A34154500FD96FE /* RUTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */; };
 		404219102A341AF500FD96FE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042190F2A341AF500FD96FE /* Profile.swift */; };
+		5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6944452A341BCA000FA318 /* MBTITogether.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		404219022A34154500FD96FE /* RUTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RUTUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4042190F2A341AF500FD96FE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5F6944442A341A3D000FA318 /* RUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RUT.entitlements; sourceTree = "<group>"; };
+		5F6944452A341BCA000FA318 /* MBTITogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTITogether.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +106,9 @@
 				404218E52A34154400FD96FE /* ContentView.swift */,
 				404218E72A34154400FD96FE /* Assets.xcassets */,
 				404218EC2A34154400FD96FE /* Item.swift */,
-				404218E92A34154400FD96FE /* Preview Content */,
 				4042190F2A341AF500FD96FE /* Profile.swift */,
+				5F6944452A341BCA000FA318 /* MBTITogether.swift */,
+				404218E92A34154400FD96FE /* Preview Content */,
 			);
 			path = RUT;
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 				404219102A341AF500FD96FE /* Profile.swift in Sources */,
 				404218ED2A34154400FD96FE /* Item.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
+				5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
