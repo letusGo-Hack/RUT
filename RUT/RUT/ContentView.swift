@@ -10,9 +10,8 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
     
-    @StateObject var shareViewModel = MBTIViewModel()
+    @StateObject var sharePlayModel = SharePlayModel()
     
     let dummyData = [
         ListItemView(mbti: .INFP, nickName: "나는야INFP", description: "하하하하하하하하"),
@@ -46,41 +45,26 @@ struct ContentView: View {
         .task {
             for await session in MBTITogether.sessions() {
                 print("session: \(session)")
-                shareViewModel.configureGroupSession(session)
+                sharePlayModel.configureGroupSession(session)
             }
         }
     }
     
     private var debugView: some View {
         VStack {
-            List(Array(shareViewModel.profiles)) { profile in
+            List(Array(sharePlayModel.profiles)) { profile in
                 HStack {
                     Text(profile.nickname)
                     Text(profile.mbti)
                 }
             }
             
-            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
+            if sharePlayModel.isSessionValid {
                 Button(action: {
-                    shareViewModel.startSharing()
+                    sharePlayModel.startSharing()
                 }, label: {
                     Text("startSharing")
                 })
-            }
-        }
-    }
-    
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
             }
         }
     }
@@ -88,6 +72,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
 }
 
