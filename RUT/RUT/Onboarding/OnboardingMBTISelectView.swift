@@ -8,35 +8,29 @@
 import SwiftUI
 
 struct OnboardingMBTISelectView: View {
-    @State var first: MBTIItemType?
-    @State var second: MBTIItemType?
-    @State var third: MBTIItemType?
-    @State var forth: MBTIItemType?
-    
-//    var selectedItem:
+    @Binding var first: MBTIItemType?
+    @Binding var second: MBTIItemType?
+    @Binding var third: MBTIItemType?
+    @Binding var forth: MBTIItemType?
     
     var body: some View {
         HStack {
-//            VStack {
-//                OnboardingMBTISelectItemView(type: .E, isSelected: false)
-//                OnboardingMBTISelectItemView(type: .I, isSelected: false)
-//            }
-//            VStack {
-//                OnboardingMBTISelectItemView(type: .N, isSelected: false)
-//                OnboardingMBTISelectItemView(type: .S, isSelected: false)
-//            }
-//            VStack {
-//                OnboardingMBTISelectItemView(type: .T, isSelected: false)
-//                OnboardingMBTISelectItemView(type: .F, isSelected: false)
-//            }
-//            VStack {
-//                OnboardingMBTISelectItemView(type: .P, isSelected: false)
-//                OnboardingMBTISelectItemView(type: .J, isSelected: false)
-//            }
+            VStack {
+                OnboardingMBTISelectItemView(type: .E, isSelectedType: $first)
+                OnboardingMBTISelectItemView(type: .I, isSelectedType: $first)
+            }
+            VStack {
+                OnboardingMBTISelectItemView(type: .N, isSelectedType: $second)
+                OnboardingMBTISelectItemView(type: .S, isSelectedType: $second)
+            }
+            VStack {
+                OnboardingMBTISelectItemView(type: .T, isSelectedType: $third)
+                OnboardingMBTISelectItemView(type: .F, isSelectedType: $third)
+            }
+            VStack {
+                OnboardingMBTISelectItemView(type: .J, isSelectedType: $forth)
+                OnboardingMBTISelectItemView(type: .P, isSelectedType: $forth)
+            }
         }
     }
-}
-
-#Preview {
-    OnboardingMBTISelectView()
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum MBTIItemType: String, CaseIterable {
+enum MBTIItemType: String, CaseIterable, Identifiable {
     case E
     case I
     case N
@@ -26,4 +26,5 @@ enum MBTIItemType: String, CaseIterable {
         default:             return .blueLight
         }
     }
+    var id: String { self.rawValue }
 }

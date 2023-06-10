@@ -13,6 +13,7 @@
 		2026DDF52A34316F00AE89B9 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2026DDF42A34316F00AE89B9 /* Colors.xcassets */; };
 		2026DDF82A34347F00AE89B9 /* OnboardingContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */; };
 		2026DDFA2A34349300AE89B9 /* OnboardingMBTIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2026DDF92A34349300AE89B9 /* OnboardingMBTIView.swift */; };
+		203B392E2A345D400097A9D7 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203B392D2A345D400097A9D7 /* Array+.swift */; };
 		20FE101C2A3441AB006B1B7F /* OnboardingMBTISelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE101B2A3441AB006B1B7F /* OnboardingMBTISelectView.swift */; };
 		20FE101E2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE101D2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift */; };
 		20FE10212A34433A006B1B7F /* OnboardingMBTISelectItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FE10202A34433A006B1B7F /* OnboardingMBTISelectItem.swift */; };
@@ -55,6 +56,7 @@
 		2026DDF42A34316F00AE89B9 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		2026DDF72A34347F00AE89B9 /* OnboardingContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContentView.swift; sourceTree = "<group>"; };
 		2026DDF92A34349300AE89B9 /* OnboardingMBTIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMBTIView.swift; sourceTree = "<group>"; };
+		203B392D2A345D400097A9D7 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		20FE101B2A3441AB006B1B7F /* OnboardingMBTISelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMBTISelectView.swift; sourceTree = "<group>"; };
 		20FE101D2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMBTISelectItemView.swift; sourceTree = "<group>"; };
 		20FE10202A34433A006B1B7F /* OnboardingMBTISelectItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingMBTISelectItem.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		203B392F2A345FC80097A9D7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				203B392D2A345D400097A9D7 /* Array+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		20FE101F2A344332006B1B7F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,7 +175,6 @@
 			children = (
 				20FE10222A344EDF006B1B7F /* Model */,
 				2026DDF62A34331100AE89B9 /* Onboarding */,
-				2026DDF32A34316100AE89B9 /* Supports */,
 				5F6944442A341A3D000FA318 /* RUT.entitlements */,
 				404218E32A34154400FD96FE /* RUTApp.swift */,
 				404218E52A34154400FD96FE /* ContentView.swift */,
@@ -176,6 +185,8 @@
 				0E22D7F82A343AB6007217A5 /* MainView.swift */,
 				0E22D7FA2A343ACF007217A5 /* SettingView.swift */,
 				0E22D7FC2A344275007217A5 /* ListItemView.swift */,
+				2026DDF32A34316100AE89B9 /* Supports */,
+				203B392F2A345FC80097A9D7 /* Extension */,
 			);
 			path = RUT;
 			sourceTree = "<group>";
@@ -343,6 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				404218E62A34154400FD96FE /* ContentView.swift in Sources */,
+				203B392E2A345D400097A9D7 /* Array+.swift in Sources */,
 				20FE10212A34433A006B1B7F /* OnboardingMBTISelectItem.swift in Sources */,
 				20FE101E2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift in Sources */,
 				0E22D7F92A343AB6007217A5 /* MainView.swift in Sources */,
@@ -522,7 +534,6 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
 				DEVELOPMENT_TEAM = U8U4L6FXAF;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -552,9 +563,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RUT/Preview Content\"";
-
 				DEVELOPMENT_TEAM = U8U4L6FXAF;
-
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

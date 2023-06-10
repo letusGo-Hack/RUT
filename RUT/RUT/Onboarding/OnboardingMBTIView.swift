@@ -8,22 +8,27 @@
 import SwiftUI
 
 struct OnboardingMBTIView: View {
+    @Binding var first: MBTIItemType?
+    @Binding var second: MBTIItemType?
+    @Binding var third: MBTIItemType?
+    @Binding var forth: MBTIItemType?
+    
     var body: some View {
         HStack(spacing: 50) {
             Spacer(minLength: 5)
-            Text("E")
+            Text(first?.rawValue ?? "")
                 .font(.system(size: 40))
                 .foregroundStyle(.black)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            Text("N")
+            Text(second?.rawValue ?? "")
                 .font(.system(size: 40))
                 .foregroundStyle(.black)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            Text("T")
+            Text(third?.rawValue ?? "")
                 .font(.system(size: 40))
                 .foregroundStyle(.black)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-            Text("J")
+            Text(forth?.rawValue ?? "")
                 .font(.system(size: 40))
                 .foregroundStyle(.black)
                 .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
@@ -31,8 +36,4 @@ struct OnboardingMBTIView: View {
         }
         .background(.grayLight)
     }
-}
-
-#Preview {
-    OnboardingMBTIView()
 }
