@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import GroupActivities
 
 struct SettingView: View {
     var body: some View {
