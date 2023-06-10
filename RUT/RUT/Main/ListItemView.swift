@@ -23,7 +23,7 @@ struct ListItemView: View {
                     .foregroundColor(.black)
                     .font(.title3)
                 Spacer(minLength: 10)
-                Text(profile.description)
+                Text(profile.profileDescription)
                     .foregroundColor(.black)
                     .font(.body)
             }
