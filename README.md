@@ -23,4 +23,4 @@
 
 ### 화면 구성
 
-<img width="772" alt="image" src="https://github.com/letusGo-Hack/RUT/assets/25509153/cdef3872-84f9-4be4-9655-d28d894e4c8b">
+<img width="753" alt="wireframe" src="https://github.com/letusGo-Hack/RUT/assets/25509153/2bccd707-c909-4708-956c-6aeed7c365cd">
