@@ -12,7 +12,7 @@ struct ListItemView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            RoundedRectangle(cornerRadius: 8)
+            RoundedRectangle(cornerRadius: 24)
                 .foregroundColor(profile.mbti.backgroundColor)
             VStack(alignment: .leading) {
                 Text(profile.mbti.rawValue)
