@@ -97,7 +97,7 @@ class MBTIViewModel: ObservableObject {
                                 id: UUID(),
                                 nickname: "my nickname",
                                 description: "description",
-                                mbti: "MBTI"
+                                mbti: MBTIType.allCases.randomElement()?.rawValue ?? ""
                             ),
                             to: .only(newParticipants)
                         )

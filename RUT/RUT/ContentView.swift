@@ -37,13 +37,11 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
-            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
-                debugView
-                    .tabItem {
-                        Image(systemName: "gear")
-                        Text("Debug")
-                    }
-            }
+            debugView
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Debug")
+                }
         }
         .task {
             for await session in MBTITogether.sessions() {
@@ -62,11 +60,13 @@ struct ContentView: View {
                 }
             }
             
-            Button(action: {
-                shareViewModel.startSharing()
-            }, label: {
-                Text("startSharing")
-            })
+            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
+                Button(action: {
+                    shareViewModel.startSharing()
+                }, label: {
+                    Text("startSharing")
+                })
+            }
         }
     }
     
