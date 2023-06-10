@@ -5,7 +5,7 @@
 //  Created by Dayuen Seong on 2023/06/10.
 //
 
-import Foundation
+import SwiftUI
 
 enum MBTIItemType: String, CaseIterable {
     case E
