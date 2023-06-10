@@ -12,7 +12,7 @@ struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
-    var shareViewModel = MBTIViewModel()
+    @StateObject var shareViewModel = MBTIViewModel()
     
     let dummyData = [
             ListItemView(mbti: "INFP", nickName: "나는야INFP", description: "하하하하하하하하"),

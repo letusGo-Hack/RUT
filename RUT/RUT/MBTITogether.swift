@@ -24,9 +24,8 @@ struct MBTITogether: GroupActivity {
 }
 
 @MainActor
-@Observable
-class MBTIViewModel {
-    var profiles: [Profile] = [
+class MBTIViewModel: ObservableObject {
+    @Published var profiles: [Profile] = [
         Profile(id: UUID(), nickname: "my nickname", description: "description", mbti: "mock")
     ]
     var groupSession: GroupSession<MBTITogether>? = nil
