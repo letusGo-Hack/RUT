@@ -17,6 +17,7 @@ final class Profile: Identifiable, Hashable, Codable {
         case mbti
     }
     
+    @Attribute(.unique)
     let id: UUID
     let nickname: String
     let profileDescription: String

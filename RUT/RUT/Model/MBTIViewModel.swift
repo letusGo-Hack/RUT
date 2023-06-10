@@ -10,6 +10,8 @@ import Combine
 import Foundation
 import GroupActivities
 import IdentifiedCollections
+import SwiftData
+import SwiftUI
 
 enum SharePlayState {
     case groupActivityConnected // 페탐 o, 그액 o
@@ -19,7 +21,11 @@ enum SharePlayState {
 
 @MainActor
 final class SharePlayModel: ObservableObject {
-    @Published var profiles: IdentifiedArrayOf<Profile> = .init()
+    
+    private var modelContext: ModelContext?
+    
+    @Published var profiles: IdentifiedArrayOf<Profile> = []
+    
     var sharePlayState: SharePlayState {
         switch (groupSession, groupStateObserver.isEligibleForGroupSession) {
         case (.some, true): return .groupActivityConnected
@@ -37,6 +43,11 @@ final class SharePlayModel: ObservableObject {
     private var tasks = Set<Task<Void, Never>>()
     
     let groupStateObserver = GroupStateObserver()
+    
+    func onAppear(modelContext: ModelContext) {
+        self.modelContext = modelContext
+        loadProfilesFromDB()
+    }
     
     func startSharing() {
         Task {
@@ -114,16 +125,37 @@ final class SharePlayModel: ObservableObject {
     }
     
     func handle(_ profile: Profile) {
-        profiles.append(profile)
+        guard let modelContext else { return }
+
+        modelContext.insert(profile)
+        
+        do {
+            try modelContext.save()
+            profiles.append(profile)
+        } catch {
+            Logger().error("error: \(error)")
+        }
     }
     
     private func reset() {
-        profiles = []
-        
+        loadProfilesFromDB()
         messenger = nil
         journal = nil
         tasks.forEach { $0.cancel() }
         tasks = []
         subscriptions = []
+    }
+    
+    private func loadProfilesFromDB() {
+        guard let modelContext else { return }
+        
+        let descriptor = FetchDescriptor<Profile>()
+        
+        do {
+            let fetchedProfiles = try modelContext.fetch(descriptor)
+            profiles = .init(uniqueElements: fetchedProfiles)
+        } catch {
+            Logger().error("error: \(error)")
+        }
     }
 }

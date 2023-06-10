@@ -9,7 +9,6 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
     @StateObject var sharePlayModel = SharePlayModel()
     
     var body: some View {
