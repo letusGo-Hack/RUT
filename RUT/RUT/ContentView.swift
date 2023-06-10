@@ -15,29 +15,21 @@ struct ContentView: View {
     var shareViewModel = MBTIViewModel()
     
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
+        TabView {
+            MainView()
+                .tabItem {
+                    Image(systemName: "house")
+                    Text("Main")
                 }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
+            
+            SettingView()
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Setting")
                 }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+            
         }
+
     }
 
     private func addItem() {
@@ -60,3 +52,4 @@ struct ContentView: View {
     ContentView()
         .modelContainer(for: Item.self, inMemory: true)
 }
+
