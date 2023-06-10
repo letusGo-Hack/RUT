@@ -15,6 +15,22 @@ struct MainView: View {
         NavigationView {
 
             VStack {
+                
+                // 공유하기 버튼
+                Button(action: {
+                    print("공유하기 버튼 클릭!!")
+                }) {
+                    Text("공유하기")
+                        .frame(minWidth: 0, maxWidth: .infinity)
+                        .padding(.vertical, 16)
+                        .padding(.horizontal, 16)
+                        .background(.blueLight)
+                        .foregroundColor(.black)
+                        .cornerRadius(8)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                }
+                
                 // 리스트뷰
                 ScrollView {
                     LazyVStack() {
@@ -23,12 +39,7 @@ struct MainView: View {
                         }
                     }
                 }
-                
-                // 공유하기 버튼
-                Button("공유하기") {
-                    print("공유하기 버튼 클릭!!")
-                }
-                .padding(16)
+
             }
             .navigationBarTitle("지갑")
             
