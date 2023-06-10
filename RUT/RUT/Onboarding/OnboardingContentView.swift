@@ -54,10 +54,7 @@ struct OnboardingContentView: View {
                     )
                     .padding(.horizontal, 20)
                     
-                    // TODO: MBTI 버튼 이벤트 달기
-                    Button("내 MBTI를 모르겠어요.", action: {
-                        
-                    })
+                    Link("내 MBTI를 모르겠어요.", destination: URL(string: "https://www.16personalities.com/ko/%EB%AC%B4%EB%A3%8C-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95-%EA%B2%80%EC%82%AC")!)
                     .foregroundStyle(.grayLight)
                     .font(.system(size: 20, weight: .bold))
                     .padding(.init(top: 40, leading: 20, bottom: 40, trailing: 20))
