@@ -37,15 +37,15 @@ struct ContentView: View {
                     Text("Setting")
                 }
             
-            debugView
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Debug")
-                }
+            if shareViewModel.groupSession == nil && shareViewModel.groupStateObserver.isEligibleForGroupSession {
+                debugView
+                    .tabItem {
+                        Image(systemName: "gear")
+                        Text("Debug")
+                    }
+            }
         }
         .task {
-            print("configureGroupSession loop")
-            
             for await session in MBTITogether.sessions() {
                 print("session: \(session)")
                 shareViewModel.configureGroupSession(session)
