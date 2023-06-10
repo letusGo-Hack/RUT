@@ -11,11 +11,22 @@ import Foundation
 import GroupActivities
 import IdentifiedCollections
 
+enum SharePlayState {
+    case groupActivityConnected // 페탐 o, 그액 o
+    case groupActivityNeeded // 페탐 켜졌지만, 공유하기 x라 그룹액티비티가 안켜진 상태
+    case faceTimeNeeded // 페탐 안켜진 상태 앱 동작 못함
+}
+
 @MainActor
 final class SharePlayModel: ObservableObject {
     @Published var profiles: IdentifiedArrayOf<Profile> = .init()
-    var isSessionValid: Bool {
-        return groupSession == nil && groupStateObserver.isEligibleForGroupSession
+    var sharePlayState: SharePlayState {
+        switch (groupSession, groupStateObserver.isEligibleForGroupSession) {
+        case (.some, true): return .groupActivityConnected
+        case (.none, true): return .groupActivityNeeded
+        case (.some, false): return .faceTimeNeeded
+        case (.none, false): return .faceTimeNeeded
+        }
     }
     
     var groupSession: GroupSession<MBTITogether>?

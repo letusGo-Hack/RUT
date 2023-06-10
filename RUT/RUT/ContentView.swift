@@ -59,12 +59,14 @@ struct ContentView: View {
                 }
             }
             
-            if sharePlayModel.isSessionValid {
-                Button(action: {
+            if sharePlayModel.sharePlayState == .groupActivityNeeded {
+                Button {
                     sharePlayModel.startSharing()
-                }, label: {
-                    Text("startSharing")
-                })
+                } label: {
+                    Text("공유하기")
+                }
+            } else {
+                // TODO: facetime을 연결해라
             }
         }
     }
