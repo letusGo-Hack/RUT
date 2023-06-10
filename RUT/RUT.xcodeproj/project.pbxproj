@@ -33,6 +33,7 @@
 		404219102A341AF500FD96FE /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4042190F2A341AF500FD96FE /* Profile.swift */; };
 		5F6944462A341BCA000FA318 /* MBTITogether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F6944452A341BCA000FA318 /* MBTITogether.swift */; };
 		5F6944492A343C0D000FA318 /* IdentifiedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 5F6944482A343C0D000FA318 /* IdentifiedCollections */; };
+		5F69444B2A3480F4000FA318 /* OnFirstAppear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F69444A2A3480F4000FA318 /* OnFirstAppear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		4042190F2A341AF500FD96FE /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		5F6944442A341A3D000FA318 /* RUT.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RUT.entitlements; sourceTree = "<group>"; };
 		5F6944452A341BCA000FA318 /* MBTITogether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MBTITogether.swift; sourceTree = "<group>"; };
+		5F69444A2A3480F4000FA318 /* OnFirstAppear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnFirstAppear.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				203B392D2A345D400097A9D7 /* Array+.swift */,
+				5F69444A2A3480F4000FA318 /* OnFirstAppear.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				20FE101E2A34420B006B1B7F /* OnboardingMBTISelectItemView.swift in Sources */,
 				404219102A341AF500FD96FE /* Profile.swift in Sources */,
 				20FE101C2A3441AB006B1B7F /* OnboardingMBTISelectView.swift in Sources */,
+				5F69444B2A3480F4000FA318 /* OnFirstAppear.swift in Sources */,
 				402478A22A345DEE007F9060 /* MBTIViewModel.swift in Sources */,
 				404218E42A34154400FD96FE /* RUTApp.swift in Sources */,
 				20FE10262A344EF8006B1B7F /* MBTIType.swift in Sources */,
